@@ -8,19 +8,43 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #fff; /* White text for contrast */
     line-height: 1.6;
-    background-color: #000; /* Black background color */
+    background-color: #000; /* Black background for body */
 }
 
 /* Header */
 header {
-    background: #333; /* Dark background for header */
-    color: #fff;
+    background: #000; /* Black background for header */
+    color: #fff; /* White text color */
     padding: 1rem 0;
     text-align: center;
 }
 
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background: #444; /* Darker background on hover */
+}
+
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -43,10 +67,63 @@ nav ul li a:hover {
     background: #555; /* Darker background on hover */
 }
 
+/* Hero Section */
+.hero {
+    background: #000; /* Ensure hero section background is black */
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: #fff; /* White text color */
+    background: transparent; /* Transparent background */
+    border: 2px solid #fff; /* White border */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    text-align: center; /* Center text */
+    transition: background 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.buttons a:hover {
+    background: #fff; /* White background on hover */
+    color: #000; /* Black text color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.buttons a:active {
+    background: #eee; /* Light gray background when clicked */
+    color: #000; /* Black text color when clicked */
+    transform: translateY(1px); /* Slight press effect */
+}
+
+
 /* Sections */
 section {
     padding: 2rem 1rem;
-    background: #fff; /* White background for sections */
+    background: #000; /* Black background for all sections */
 }
 
 section h2 {
@@ -59,7 +136,7 @@ form {
     max-width: 600px;
     margin: 0 auto;
     padding: 1rem;
-    background: #fff; /* White background for the form */
+    background: #000; /* Black background for the form */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for the form */
 }
@@ -67,33 +144,36 @@ form {
 form label {
     display: block;
     margin: 0.5rem 0;
+    color: #fff; /* White text for labels */
 }
 
 form input, form textarea {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #444; /* Darker border for inputs */
     border-radius: 5px;
+    background: #333; /* Dark gray background for inputs and textarea */
+    color: #fff; /* White text color inside inputs and textarea */
 }
 
 form button {
-    background: #333; /* Dark background for button */
-    color: #fff;
-    border: none;
+    background: #000; /* Black background for button */
+    color: #fff; /* White text for button */
+    border: 1px solid #444; /* Border for button */
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
 }
 
 form button:hover {
-    background: #555; /* Darker background on hover */
+    background: #222; /* Slightly lighter black for hover effect */
 }
 
 /* Footer */
 footer {
-    background: #333; /* Dark background for footer */
-    color: #fff;
+    background: #000; /* Black background for footer */
+    color: #fff; /* White text color */
     text-align: center;
     padding: 1rem 0;
 }
