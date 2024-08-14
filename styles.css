@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light gray background color */
+    background-color: #000; /* Black background color */
 }
 
 /* Header */
@@ -41,23 +41,6 @@ nav ul li a {
 
 nav ul li a:hover {
     background: #555; /* Darker background on hover */
-}
-
-/* Hero Section */
-.hero {
-    background: #eee; /* Light background for hero section */
-    text-align: center;
-    padding: 5rem 1rem;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 /* Sections */
