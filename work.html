@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color for contrast */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #projects h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #projects .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 1rem;
+        }
+
+        #projects .project-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #projects .project-grid img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="about">ABOUT</a></li>
+                <li><a href="work">WORK</a></li>
+                <li><a href="contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects">
+        <h1></h1>
+        <div class="project-grid">
+            <img src="projects/CV-UNEARTHED-STILL-POSTER.png" alt="Project 1">
+            <img src="projects/madis-birthday-2.png" alt="Project 2">
+            <img src="projects/madis-birthday.png" alt="Project 3">
+            <img src="projects/myluckypawn.png" alt="Project 4">
+            <img src="projects/qrat.png" alt="Project 5">
+            <img src="images/project6.jpg" alt="Project 6">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 YADIRTYDOG. All rights reserved.</p>
+    </footer>
+</body>
+</html>
