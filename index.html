@@ -6,32 +6,79 @@
     <title>YADIRTYDOG!</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Splash Screen Styles */
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f1cd00; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #splash-screen img {
+            max-width: 750px; /* 300px x 2.5 = 750px */
+            height: auto;
+        }
+
+        /* Hide content until splash screen disappears */
+        #content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="about">ABOUT</a></li>
-                <li><a href="work">WORK</a></li>
-                <li><a href="contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="splash-screen">
+        <img src="images/splash.gif" alt="Splash GIF">
+    </div>
 
-    <section id="home" class="hero">
-        <h1>YADIRTYDOG!</h1>
-        <p>Dirty dog, again?</p>
-        <div class="buttons">
-            <a href="https://www.instagram.com/yadirtydog/" target="_blank">INSTAGRAM</a>
-            <a href="https://example.com/audiobook" target="_blank">JOIN THE DISCORD</a>
-            <a href="https://example.com/first-book" target="_blank">BOOKCLUB</a>
-            <a href="https://open.spotify.com/user/mvbpi9begg5jl75tj4i0fupjh?si=9afd81d94b784df9" target="_blank">SPOTIFY</a>
-        </div>
-    </section>
+    <div id="content">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="work">WORK</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <footer>
-        <p>&copy; 2024 YADIRTYDOG. All rights reserved.</p>
-    </footer>
+        <section id="home" class="hero">
+            <h1>YADIRTYDOG!</h1>
+            <p>Dirty dog, again?</p>
+            <div class="buttons">
+                <a href="https://www.instagram.com/yadirtydog/" target="_blank">INSTAGRAM</a>
+                <a href="https://example.com/audiobook" target="_blank">JOIN THE DISCORD</a>
+                <a href="https://example.com/first-book" target="_blank">BOOKCLUB</a>
+                <a href="https://open.spotify.com/user/mvbpi9begg5jl75tj4i0fupjh?si=9afd81d94b784df9" target="_blank">SPOTIFY</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 YADIRTYDOG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const content = document.getElementById('content');
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+                content.style.display = 'block';
+            }, 3000); // Adjust the timeout duration if needed
+        });
+    </script>
 </body>
 </html>
