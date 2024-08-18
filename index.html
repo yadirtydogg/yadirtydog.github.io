@@ -24,10 +24,11 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            cursor: pointer; /* Change cursor to pointer to indicate clickable area */
         }
 
         #splash-screen img {
-            max-width: 750px; /* 300px x 2.5 = 750px */
+            max-width: 750px; /* Adjust size as needed */
             height: auto;
         }
 
@@ -71,13 +72,10 @@
     </div>
 
     <script>
-        window.addEventListener('load', function() {
-            const splashScreen = document.getElementById('splash-screen');
-            const content = document.getElementById('content');
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-                content.style.display = 'block';
-            }, 3000); // Adjust the timeout duration if needed
+        // Handle splash screen click event
+        document.getElementById('splash-screen').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
         });
     </script>
 </body>
