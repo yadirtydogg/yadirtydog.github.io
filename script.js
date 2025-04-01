@@ -89,7 +89,7 @@ function alignOverlay() {
   ctx.textAlign = "center";
   ctx.font = `${Math.floor(h * 0.14)}px sans-serif`;
   ctx.fillText("MATCH", w / 2, h * 0.3);
-  ctx.fillText("3", w / 2, h * 0.5);
+  ctx.fillText("3 DOGS", w / 2, h * 0.5);
   ctx.fillText("AND WIN", w / 2, h * 0.7);
 }
 
