@@ -17,7 +17,7 @@ const images = [
   "images/paws.png"
 ];
 
-const isWinner = Math.random() <= 0.9;
+const isWinner = Math.random() <= 0.08;
 
 function generateGrid() {
   const chosen = [];
