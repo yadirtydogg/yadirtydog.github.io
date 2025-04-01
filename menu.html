@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu - YADIRTYDOG</title>
+  <style>
+    body {
+      margin: 0;
+      
+      font-family: sans-serif;
+      background: white;
+      color: red;
+    }
+
+    
+
+    
+
+    .menu-logo {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .menu-logo img {
+      height: 80px;
+    }
+
+    .menu-logo p {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 0.5em 0 1.5em;
+    }
+
+    .menu-box {
+      border: 6px solid red;
+      padding: 2em;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .section h2 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      font-weight: bold;
+    }
+
+    .section li {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.4em 0;
+    }
+
+    .webdev-box {
+      border: 3px solid red;
+      padding: 1em;
+      font-weight: bold;
+      max-width: 180px;
+      margin-top: 2em;
+    }
+
+    .webdev-box h3 {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 0.8em;
+    }
+
+    .webdev-box ul li {
+      font-weight: normal;
+    }
+
+    .disclaimer {
+      font-size: 0.85em;
+      margin-top: 2em;
+      line-height: 1.4;
+      max-width: 300px;
+    }
+
+    .order-btn {
+      display: block;
+      background: red;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5em;
+      text-align: center;
+      margin: 3em auto 0;
+      padding: 1em 2em;
+      border-radius: 20px;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+  
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5em 2em;
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+
+    nav a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="work.html">work</a>
+    <a href="home.html">home</a>
+  </nav>
+
+  <div class="menu-logo">
+    <img src="images/yadirtydog-logo.png" alt="menu logo">
+    <p>menu</p>
+  </div>
+
+  <div class="menu-box">
+    <div class="categories">
+      <div class="section">
+        <h2>VIDEO</h2>
+        <ul>
+          <li><span>BASIC</span> <span>40</span></li>
+          <li><span>SUBTITLE</span> <span>50</span></li>
+          <li><span>MOTION</span> <span>60</span></li>
+          <li><span>YOUTUBE</span> <span>40</span></li>
+        </ul>
+        <p class="disclaimer">
+          All prices listed are starting rates. If you have special requests or need additional services,
+          feel free to reach out for a personalized quote— I’d be happy to help!
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>GRAPHICS</h2>
+        <ul>
+          <li><span>LOGO</span> <span>40</span></li>
+          <li><span>MERCH</span> <span>50</span></li>
+          <li><span>FLYERS</span> <span>60</span></li>
+          <li><span>PACKAGE</span> <span>40</span></li>
+          <li><span>ILLUSTRATION</span> <span>50</span></li>
+          <li><span>SHIRT</span> <span>60</span></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="webdev-box">
+          <h3>WEB DEV</h3>
+          <ul>
+            <li><span>CUSTOM</span> <span>1K</span></li>
+            <li><span>E-COMMERCE</span> <span>2K</span></li>
+            <li><span>FRONT-END</span> <span>500</span></li>
+            <li><span>BACK-END</span> <span>1K</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a href="order-form.html" class="order-btn">click here to fill out an order sheet</a>
+  </div>
+
+</body>
+</html>

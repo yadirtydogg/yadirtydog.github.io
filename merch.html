@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MERCH</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: white;
+      color: red;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5em 2em;
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: red;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 1em 0;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 2em;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 2em;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 0;
+    }
+
+    .gallery {
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .gallery img {
+      height: 400px;
+      border-radius: 4px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    .scroll-track {
+      width: 80%;
+      max-width: 500px;
+      height: 10px;
+      background: red;
+      border-radius: 999px;
+      margin: 1em auto 3em;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .scroll-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 3px solid red;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="work.html">work</a>
+    <a href="logo.html">logo</a>
+  </nav>
+
+  <h1>MERCH</h1>
+
+  <div class="gallery" id="merchGallery">
+    <img src="images/merch/merch1.png" alt="merch 1">
+    <img src="images/merch/merch2.png" alt="merch 2">
+    <img src="images/merch/merch3.png" alt="merch 3">
+    <img src="images/merch/merch4.png" alt="merch 4">
+    <img src="images/merch/merch5.png" alt="merch 5">
+    <img src="images/merch/merch6.png" alt="merch 6">
+  </div>
+
+  <div class="scroll-track" id="scrollTrack">
+    <div class="scroll-dot" id="scrollDot"></div>
+  </div>
+
+  <script>
+    const gallery = document.getElementById('merchGallery');
+    const track = document.getElementById('scrollTrack');
+    const dot = document.getElementById('scrollDot');
+
+    function updateDotPosition() {
+      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+      const percent = gallery.scrollLeft / maxScroll;
+      const trackWidth = track.clientWidth;
+      const dotX = percent * trackWidth;
+      dot.style.left = dotX + 'px';
+    }
+
+    gallery.addEventListener('scroll', updateDotPosition);
+    window.addEventListener('load', updateDotPosition);
+
+    let isDragging = false;
+
+    dot.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const rect = track.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      x = Math.max(0, Math.min(x, rect.width));
+      const percent = x / rect.width;
+      gallery.scrollLeft = percent * (gallery.scrollWidth - gallery.clientWidth);
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.userSelect = '';
+    });
+
+    track.addEventListener('click', (e) => {
+      if (e.target === dot) return;
+      const rect = track.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const percent = clickX / rect.width;
+      gallery.scrollLeft = percent * (gallery.scrollWidth - gallery.clientWidth);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scratch & Win</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="images/ticket.png" id="ticket" />
+    <canvas id="scratchCanvas"></canvas>
+    <div id="resultGrid"></div>
+    <div id="winMessage" style="display: none;">🎉 You won 1 FREE DESIGN! Use code: <strong>DOG50</strong></div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+  .enter-link {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+</style>
+<a class="enter-link" href="home.html">
+  <span>HOME</span><span>→</span>
+</a>
+</body>
+
+</html>
