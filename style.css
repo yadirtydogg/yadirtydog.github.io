@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'VeniceClassic';
+  src: url('fonts/VeniceClassic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0;
   background: #ffffff;
@@ -34,7 +40,14 @@ body {
   cursor: url('images/coin-cursor.png') 16 16, auto;
 }
 
-#scratchCanvas, #resultGrid {
+#scratchCanvas {
+  position: absolute;
+  z-index: 10;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#resultGrid {
   position: absolute;
   z-index: 10;
 }

@@ -10,7 +10,7 @@ const winJingle = new Audio("winning.mp3");
 scratchAudio.loop = true;
 
 const images = [
-  "images/yadirtydog-logo.png",
+  "images/doggo.png",
   "images/bone.png",
   "images/collar.png",
   "images/dog-bowl.png",
@@ -32,7 +32,7 @@ function generateGrid() {
       const row = [];
       for (let j = 0; j < 3; j++) {
         if (i === winRow) {
-          row.push("images/yadirtydog-logo.png");
+          row.push("images/doggo.png");
         } else {
           const rand = images[Math.floor(Math.random() * (images.length - 1)) + 1];
           row.push(rand);
@@ -54,15 +54,16 @@ function generateGrid() {
   });
 }
 
+
 function alignOverlay() {
   const rect = ticket.getBoundingClientRect();
-  const scaleX = rect.width / 800;
-  const scaleY = rect.height / 910;
+  const naturalWidth = ticket.naturalWidth || 800; // fallback
+  const scale = rect.width / naturalWidth;
 
-  const x = 2905 * scaleX;
-  const y = 740 * scaleY;
-  const w = 448 * scaleX;
-  const h = 325 * scaleY;
+  const x = rect.left + rect.width * 0.25;
+  const y = rect.top + rect.height * 0.52;
+  const w = rect.width * 0.55;
+  const h = rect.height * 0.34;
 
   [canvas, grid].forEach(el => {
     el.style.left = `${x}px`;
@@ -74,17 +75,18 @@ function alignOverlay() {
   canvas.width = w;
   canvas.height = h;
 
-  ctx.fillStyle = "#c0c0c0";
+  ctx.fillStyle = "white";
   ctx.globalCompositeOperation = "source-over";
   ctx.fillRect(0, 0, w, h);
 
-  ctx.fillStyle = "rgba(0,0,0,1)";
+  ctx.fillStyle = "red";
   ctx.textAlign = "center";
-  ctx.font = `${Math.floor(h * 0.14)}px sans-serif`;
+  ctx.font = `${Math.floor(h * 0.14)}px VeniceClassic`;
   ctx.fillText("MATCH", w / 2, h * 0.3);
   ctx.fillText("3 DOGS", w / 2, h * 0.5);
   ctx.fillText("AND WIN", w / 2, h * 0.7);
 }
+
 
 function setupScratchArea() {
   canvas.addEventListener("mousedown", startScratching);
@@ -146,7 +148,7 @@ function checkWinMatch() {
   const imgs = [...grid.querySelectorAll("img")];
   for (let i = 0; i < 3; i++) {
     const row = imgs.slice(i * 3, i * 3 + 3);
-    if (row.every(img => img.src.includes("images/yadirtydog-logo.png"))) {
+    if (row.every(img => img.src.includes("images/doggo.png"))) {
       if (!winTriggered) {
         winTriggered = true;
         if (typeof confetti === "function") {
