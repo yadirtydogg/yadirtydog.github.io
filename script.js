@@ -75,11 +75,11 @@ function alignOverlay() {
   canvas.width = w;
   canvas.height = h;
 
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#0000ff";
   ctx.globalCompositeOperation = "source-over";
   ctx.fillRect(0, 0, w, h);
 
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "white";
   ctx.textAlign = "center";
   ctx.font = `${Math.floor(h * 0.14)}px VeniceClassic`;
   ctx.fillText("MATCH", w / 2, h * 0.3);

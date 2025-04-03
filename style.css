@@ -6,9 +6,9 @@
 }
 body {
   margin: 0;
-  background: #ffffff;
+  background: #0000ff;
   font-family: sans-serif;
-  color: red;
+  color: rgb(255, 255, 255);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
