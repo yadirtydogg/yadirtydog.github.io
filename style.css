@@ -1,30 +1,44 @@
 body {
   margin: 0;
   background: #ffffff;
+  font-family: sans-serif;
+  color: red;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  margin-top: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 95vw;
 }
-.container {
-  position: relative;
-  max-height: 90vh;
+
+.id-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 320px;
 }
+
 #ticket {
-  cursor: url('images/coin-cursor.png') 16 16, auto;
-  max-height: 90vh;
+  position: relative;
+  max-width: 300px;
   height: auto;
-  width: auto;
-  display: block;
+  cursor: url('images/coin-cursor.png') 16 16, auto;
 }
+
 #scratchCanvas, #resultGrid {
   position: absolute;
-}
-#scratchCanvas {
   z-index: 10;
-  cursor: url('images/coin-cursor.png') 16 16, auto;
 }
+
 #resultGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,21 +47,39 @@ body {
   padding: 6px;
   z-index: 5;
 }
+
 #resultGrid img {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
+
+#scratchCanvas {
+  z-index: 10;
+  pointer-events: auto;
+  cursor: url('images/coin-cursor.png') 16 16, auto;
+}
+
 #winMessage {
   display: none;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
   background: white;
   color: black;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 10px 16px;
+  font-size: 0.95rem;
   border-radius: 6px;
   z-index: 20;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.socials {
+  margin-top: 40px;
+  font-size: 24px;
+  letter-spacing: 10px;
+  font-weight: bold;
 }

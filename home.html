@@ -1,101 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>home | Yadirtydog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yadirtydog</title>
   <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      background: white;
-      font-family: sans-serif;
-      color: red;
+    /* Force nav to top-left and top-right */
+    .nav-left {
+      position: absolute;
+      top: 34px;
+      left: 44px;
+      font-size: 1.9em;
+      font-weight: bold;
     }
 
+    .nav-right {
+      position: absolute;
+      top: 34px;
+      right: 44px;
+      font-size: 1.9em;
+      font-weight: bold;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      color: red;
+      text-decoration: none;
+    }
     
-
-    a {
-      color: red;
-      text-decoration: none;
+    footer a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
     }
 
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 3em;
-      padding: 4em 2em;
-      flex-wrap: wrap;
+    footer a:hover {
+    text-decoration: underline;
     }
-
-    .id-card {
-      max-width: 340px;
-      filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.2));
-    }
-
-    .bio {
-      max-width: 400px;
-      font-size: 1.1em;
-      line-height: 1.6em;
-      font-weight: bold;
-    }
-
-    .socials {
-      text-align: center;
-      margin-top: 6em;
-      font-size: 3em;
-      font-weight: bold;
-      letter-spacing: 0.3em;
-    }
-
-    .socials a {
-      color: red;
-      text-decoration: none;
-      margin: 0 0.3em;
-    }
-
-    /* optional hover fx */
-    .socials a:hover {
-      text-decoration: underline;
-    }
-  
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5em 2em;
-      font-weight: bold;
-      font-size: 1.4em;
-    }
-
-    nav a {
-      color: red;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.4em;
-    }
-
-</style>
+  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="menu.html">menu</a>
-    <a href="work.html">work</a>
-  </nav>
+  <!-- TRUE TOP-LEFT AND TOP-RIGHT BUTTONS -->
+  <div class="nav-left"><a href="menu.html">menu</a></div>
+  <div class="nav-right"><a href="work.html">work</a></div>
 
-  <main>
-    <img src="images/id.png" alt="ID card" class="id-card">
-    <div class="bio">
-      I'm a multimedia artist working mainly in photoshop/davinci. I program as a hobby but I'm working to become a fullstack dev. If you have any questions or if you just wanna say hi, you can find me @yadirtydog on most socials!
+  <!-- MAIN CONTENT -->
+  <main style="display: flex; justify-content: center; align-items: flex-start; gap: 4em; padding: 4em; flex-wrap: wrap; margin-top: 80px;">
+    <div class="bio-block" style="max-width: 350px; text-align: left;">
+      <img src="images/id.png" alt="ID card" class="id-card" style="max-width: 100%; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.2));" />
+      <div class="bio" style="margin-top: 1em; font-weight: bold;">
+        I'm a multimedia artist working mainly in photoshop/davinci. I program as a hobby but I'm working to become a fullstack dev. If you have any questions or if you just wanna say hi, you can find me @yadirtydog on most socials!
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="images/ticket.png" id="ticket" />
+      <canvas id="scratchCanvas"></canvas>
+      <div id="resultGrid"></div>
+      <div id="winMessage" style="display: none;">🎉 You won 1 FREE DESIGN! Use code: <strong>DOG50</strong></div>
     </div>
   </main>
 
-  <div class="socials">
+  <!-- FOOTER SOCIALS -->
+  <footer style="margin-top: 4em; text-align: center; font-size: 2em; font-weight: bold;">
     <a href="https://x.com/yadirtydog" target="_blank">X</a>
-    ••••••••••••••••
+    <span style="margin: 0 1em;">••••••••••••••</span>
     <a href="https://instagram.com/yadirtydog" target="_blank">IG</a>
-  </div>
+  </footer>
 
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
