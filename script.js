@@ -18,7 +18,7 @@ const images = [
   "images/paws.png"
 ];
 
-const isWinner = Math.random() <= 0.9;
+const isWinner = Math.random() <= 0.05;
 let scratched = false;
 let winTriggered = false;
 
